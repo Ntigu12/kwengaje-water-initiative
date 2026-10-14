@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kwengaje Water Initiative: a proposed community-led, scalable approach to improving reliable water access in rural Tanzania, starting in Kwengaje village.">
+<title>Kwengaje Water Initiative</title>
+<style>
+:root { color-scheme: light dark; --ink: light-dark(#17302d,#e8f1ed); --muted: light-dark(#5d706b,#b3c4be); --paper: light-dark(#f7f8f3,#111d1b); --panel: light-dark(#ffffff,#1b2a27); --line: light-dark(#dce5df,#334541); --green: light-dark(#176b56,#75d4b3); --deep: light-dark(#103f35,#0c3028); --sand: light-dark(#e9e2d1,#3b3b30); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+.root { min-height: 100vh; background: var(--paper); }
+.wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+header { border-bottom: 1px solid var(--line); background: var(--paper); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 750; letter-spacing: -.03em; }
+.mark { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; color: #fff; background: #176b56; }
+.mark svg { width: 27px; height: 27px; }
+.nav a { color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 650; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 750; color: var(--green); letter-spacing: .07em; text-transform: uppercase; }
+.hero { padding: 78px 0 72px; background: radial-gradient(ellipse at 90% 15%, color-mix(in srgb, var(--green) 14%, transparent), transparent 42%); }
+.hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 56px; }
+h1 { font-size: clamp(42px, 6vw, 72px); line-height: 1.04; letter-spacing: -.06em; margin: 20px 0 22px; max-width: 720px; }
+.lead { font-size: clamp(17px, 2vw, 20px); max-width: 650px; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; padding: 12px 17px; text-decoration: none; font-weight: 750; font-size: 14px; border: 1px solid var(--green); background: var(--green); color: light-dark(#fff,#10221d); }
+.btn.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+.illustration { min-height: 355px; border-radius: 24px; background: linear-gradient(145deg,#dcece3,#a9d2c0); position: relative; overflow: hidden; padding: 22px; color: #173f35; }
+.illustration:before { content: ""; position: absolute; width: 320px; height: 320px; border-radius: 50%; background: #8bbba4; right: -85px; top: -90px; opacity: .75; }
+.illustration:after { content: ""; position: absolute; width: 430px; height: 190px; border-radius: 50% 50% 0 0; background: #4f9279; bottom: -90px; left: -45px; transform: rotate(-8deg); }
+.sun { position: absolute; right: 42px; top: 46px; width: 58px; height: 58px; border-radius: 50%; background: #f4d68a; }
+.water-card { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 24px; background: rgba(255,255,255,.92); border: 1px solid rgba(255,255,255,.65); border-radius: 16px; padding: 17px 18px; box-shadow: 0 12px 32px rgba(16,63,53,.13); }
+.water-card strong { display: block; font-size: 18px; }
+.water-card span { font-size: 13px; color: #4b6d60; }
+.drop { position: absolute; z-index: 1; left: 50%; top: 58px; transform: translateX(-50%); }
+section { padding: 72px 0; }
+.section-head { max-width: 700px; margin-bottom: 30px; }
+.eyebrow { color: var(--green); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; }
+h2 { font-size: clamp(28px,4vw,42px); letter-spacing: -.045em; line-height: 1.12; margin: 12px 0; }
+.section-head p, .card p, .step p { color: var(--muted); margin-bottom: 0; }
+.cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.card { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+.card .num { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; color: var(--green); background: color-mix(in srgb, var(--green) 13%, transparent); font-weight: 800; }
+.card h3 { margin: 18px 0 8px; font-size: 19px; letter-spacing: -.02em; }
+.soft { background: color-mix(in srgb, var(--green) 6%, var(--paper)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.roadmap { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; counter-reset: step; }
+.step { border-top: 2px solid var(--green); padding-top: 18px; }
+.step b { display: block; font-size: 16px; margin-bottom: 7px; }
+.impact { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+.impact-panel { background: var(--deep); color: #f4fbf7; padding: 30px; border-radius: 20px; }
+.impact-panel h3 { margin-top: 0; font-size: 24px; }
+.impact-panel p { color: #d1e4db; }
+.note { border-left: 3px solid var(--green); padding-left: 16px; color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted); font-size: 13px; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+@media (max-width: 760px) { .hero { padding: 54px 0; } .hero-grid, .impact { grid-template-columns: 1fr; gap: 28px; } .illustration { min-height: 290px; } .cards { grid-template-columns: 1fr; } .roadmap { grid-template-columns: 1fr 1fr; } .nav-links { gap: 12px; } .nav-links a:not(.btn) { display: none; } section { padding: 54px 0; } }
+@media (max-width: 420px) { .wrap { width: min(100% - 28px, 1120px); } .roadmap { grid-template-columns: 1fr; } .footer-row { align-items: flex-start; flex-direction: column; } }
+</style>
+</head>
+<body>
+<div class="root">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Kwengaje Water Initiative home" style="text-decoration:none;color:var(--ink)">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 3C12 10 6.5 15.1 6.5 20.2A9.5 9.5 0 0 0 25.5 20.2C25.5 15.1 20 10 16 3Z" stroke="currentColor" stroke-width="2.2"/><path d="M11 21c.6 2.2 2.2 3.4 4.6 3.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      <span>Kwengaje Water Initiative</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation"><a href="#approach">Our approach</a><a href="#roadmap">Pilot plan</a><a class="btn" href="#connect">Get involved</a></nav>
+  </div>
+</header>
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill">A proposed rural water initiative · Tanzania</span>
+        <h1>Reliable water.<br>Stronger communities.</h1>
+        <p class="lead">We aim to develop a practical, community-led water solution starting in Kwengaje village, Kilindi District, Tanga Region—and build a model that can be adapted for other underserved rural communities.</p>
+        <div class="actions"><a class="btn" href="#approach">Explore the vision <span aria-hidden="true">↗</span></a><a class="btn secondary" href="#roadmap">See the proposed plan</a></div>
+      </div>
+      <div class="illustration" role="img" aria-label="Illustration representing a rural water project and green landscape">
+        <div class="sun"></div>
+        <svg class="drop" width="126" height="155" viewBox="0 0 126 155" fill="none" aria-hidden="true"><path d="M63 5C48 30 20 58 20 88a43 43 0 0 0 86 0C106 58 78 30 63 5Z" fill="#f7fffb" stroke="#176b56" stroke-width="3"/><path d="M39 91c2 13 11 22 25 24" stroke="#6ab49a" stroke-width="5" stroke-linecap="round"/></svg>
+        <div class="water-card"><strong>Start in Kwengaje</strong><span>Assess locally. Build responsibly. Learn and scale.</span></div>
+      </div>
+    </div>
+  </section>
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">The idea</span><h2>More than a borehole</h2><p>Lasting access to water depends on choosing the right source, planning infrastructure carefully, and making sure the system can be maintained over time.</p></div>
+      <div class="cards">
+        <article class="card"><span class="num">01</span><h3>Understand the need</h3><p>Work with residents and local authorities to assess water access, demand, seasonal challenges, and existing services before choosing a solution.</p></article>
+        <article class="card"><span class="num">02</span><h3>Design with experts</h3><p>Engage qualified water professionals to survey groundwater potential and assess a borehole, solar pumping, storage, distribution points, and livestock access where feasible.</p></article>
+        <article class="card"><span class="num">03</span><h3>Plan for the long term</h3><p>Develop a community-led management and maintenance approach, with transparent responsibilities and a realistic plan for operating costs.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="soft" id="roadmap">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Proposed pilot</span><h2>Start small. Learn. Scale responsibly.</h2><p>The initiative is currently at the idea stage. The pilot would proceed only after local needs, technical feasibility, permissions, and funding are assessed.</p></div>
+      <div class="roadmap">
+        <div class="step"><b>1. Community assessment</b><p>Confirm needs, beneficiaries, existing water options, and local priorities.</p></div>
+        <div class="step"><b>2. Technical feasibility</b><p>Commission qualified surveys, water-quality planning, design, and cost estimates.</p></div>
+        <div class="step"><b>3. Build partnerships</b><p>Coordinate with authorities, engineers, funders, and community representatives.</p></div>
+        <div class="step"><b>4. Pilot and evaluate</b><p>If feasible and funded, implement, monitor reliability, and document lessons for future villages.</p></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap impact">
+      <div><span class="eyebrow">Our long-term vision</span><h2>A model that can serve more villages</h2><p class="lead">Kwengaje would be the starting point for learning how to deliver and maintain rural water infrastructure in a way that is practical, locally supported, and adaptable.</p></div>
+      <div class="impact-panel"><h3>What we are working toward</h3><p>• Reliable water access for households and livestock, based on verified local needs.</p><p>• Strong community participation and clear maintenance responsibilities.</p><p>• A documented approach that can be improved and replicated in other underserved villages.</p><p class="note" style="color:#d1e4db">The population served, water source, project costs, and implementation schedule will be confirmed through community consultation and professional assessment. No construction or funding is claimed at this stage.</p></div>
+    </div>
+  </section>
+  <section class="soft" id="connect">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Partners and supporters</span><h2>Help turn the idea into a practical pilot</h2><p>We welcome conversations with water engineers, rural water specialists, community organisations, local authorities, and potential funding partners who can help assess and develop this initiative.</p></div>
+      <div class="cards">
+        <article class="card"><h3>Project founder</h3><p>Mussa Athumani Mwigulu</p></article>
+        <article class="card"><h3>Email</h3><p><a href="mailto:ntiguhub@gmail.com">ntiguhub@gmail.com</a></p></article>
+        <article class="card"><h3>Public contact</h3><p>Not yet available</p></article>
+      </div>
+      <p class="note" style="margin-top:20px">Kwengaje Water Initiative is an early-stage concept. The project is still being developed and assessed.</p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><span><strong>Kwengaje Water Initiative</strong> · Proposed community water project<br>Founded by Mussa Athumani Mwigulu · <a href="mailto:ntiguhub@gmail.com">ntiguhub@gmail.com</a></span><span>Kwengaje, Kilindi District · Tanga Region, Tanzania</span></div></footer>
+</div>
+</body>
+</html>
